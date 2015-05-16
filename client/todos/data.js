@@ -5,7 +5,10 @@ import Emitter from 'events';
 let { localStorage } = window;
 
 const KEY = 'todos-deku';
-
+const DEFAULTS = [
+  { title: 'Taste JavaScript', completed: true },
+  { title: 'Buy a unicorn' }
+];
 
 export default class Todos extends Emitter {
   constructor() {
@@ -18,13 +21,13 @@ export default class Todos extends Emitter {
 
   load() {
     var data = localStorage.getItem(KEY);
-    if (!data) return [];
+    if (!data) return DEFAULTS;
     return JSON.parse(data);
   }
 
   store() {
     this.emit('change');
-    // localStorage.setItem(KEY, JSON.stringify(this.list));
+    localStorage.setItem(KEY, JSON.stringify(this.list));
   }
 
   // read
