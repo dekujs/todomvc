@@ -9,7 +9,7 @@ export default function plugin() {
   return function (app) {
     var todos = new Todos();
 
-    app.set('todos', []);
+    app.set('todos', todos.list);
     todos.on('change', () => app.set('todos', todos.get()));
 
     // collection

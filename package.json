@@ -12,6 +12,7 @@
     "browserify": "^10.2.0"
   },
   "scripts": {
-    "build": "browserify -d client/index.js -o build/index.js -t [ babelify --jsxPragma 'dom' ]"
+    "build": "mkdir -p build && browserify -d client/index.js -t [ babelify --jsxPragma 'dom' ] > build/index.js",
+    "start": "serve"
   }
 }
