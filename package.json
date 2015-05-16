@@ -1,0 +1,17 @@
+{
+  "private": true,
+  "dependencies": {
+    "bus": "0.0.3",
+    "clone": "^1.0.2",
+    "deku": "^0.2.17",
+    "todomvc-app-css": "^2.0.0",
+    "todomvc-common": "^1.0.0"
+  },
+  "devDependencies": {
+    "babelify": "^6.1.1",
+    "browserify": "^10.2.0"
+  },
+  "scripts": {
+    "build": "browserify -d client/index.js -o build/index.js -t [ babelify --jsxPragma 'dom' ]"
+  }
+}
