@@ -26,7 +26,7 @@ function render({ props }) {
         <label for="toggle-all">Mark all as complete</label>
         <TodoList todos={todos} />
       </section>
-      <Footer filter={filter} remaining={remaining} />
+      <Footer remaining={remaining} />
     </section>
   );
 }

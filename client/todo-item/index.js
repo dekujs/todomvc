@@ -4,6 +4,10 @@ import { dom } from 'deku';
 import { ENTER, ESCAPE } from '../keycodes';
 
 
+var propTypes = {
+  todo: { type: 'object' }
+};
+
 function afterRender({ state }, el) {
   if (state.editing && !state.title) {
     var input = el.querySelector('input.edit');
@@ -13,10 +17,10 @@ function afterRender({ state }, el) {
 }
 
 function render({ props, state }, setState) {
-  let { id, todo } = props;
+  let { todo } = props;
   let { editing } = state;
 
-  let { completed, title } = todo;
+  let { id, completed, title } = todo;
   var classes = { completed, editing };
 
   function destroy() {
@@ -69,4 +73,4 @@ function render({ props, state }, setState) {
   );
 }
 
-export default { afterRender, render };
+export default { propTypes, afterRender, render };

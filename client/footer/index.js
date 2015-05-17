@@ -2,6 +2,12 @@
 import { dom } from 'deku';
 import bus from 'bus';
 
+
+var propTypes = {
+  filter: { source: 'filter' },
+  remaining: { type: 'number' }
+};
+
 function render({ props }) {
   let { filter, remaining } = props;
   let clear = () => bus.emit('todos:clear');
@@ -22,4 +28,4 @@ function render({ props }) {
   );
 }
 
-export default { render };
+export default { propTypes, render };

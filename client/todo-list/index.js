@@ -2,11 +2,15 @@
 import { dom } from 'deku';
 import TodoItem from '../todo-item';
 
+var propTypes = {
+  todos: { type: 'array' }
+};
+
 function render({ props }) {
   let { todos } = props;
 
-  var children = todos.map((todo, x) => {
-    return <TodoItem id={x} todo={todo} />;
+  var children = todos.map(todo => {
+    return <TodoItem todo={todo} />;
   });
 
   return (
@@ -14,4 +18,4 @@ function render({ props }) {
   );
 }
 
-export default { render };
+export default { propTypes, render };

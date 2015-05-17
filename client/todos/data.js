@@ -6,8 +6,8 @@ if (typeof window !== 'undefined') var localStorage = window.localStorage;
 
 const KEY = 'todos-deku';
 const DEFAULTS = [
-  { title: 'Taste JavaScript', completed: true },
-  { title: 'Buy a unicorn' }
+  { id: 0, title: 'Taste JavaScript', completed: true },
+  { id: 1, title: 'Buy a unicorn' }
 ];
 
 export default class Todos extends Emitter {
@@ -34,6 +34,7 @@ export default class Todos extends Emitter {
 
   get(filter) {
     var list = clone(this.list);
+    list.forEach((todo, x) => todo.id = x);
     return filter ? list.filter(filter) : list;
   }
 
