@@ -4,6 +4,7 @@
     "bus": "0.0.3",
     "clone": "^1.0.2",
     "deku": "^0.2.17",
+    "hashchange": "^1.0.0",
     "todomvc-app-css": "^2.0.0",
     "todomvc-common": "^1.0.0"
   },
