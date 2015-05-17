@@ -2,7 +2,7 @@
 import clone from 'clone';
 import Emitter from 'events';
 
-let { localStorage } = window;
+if (typeof window !== 'undefined') var localStorage = window.localStorage;
 
 const KEY = 'todos-deku';
 const DEFAULTS = [
@@ -20,14 +20,14 @@ export default class Todos extends Emitter {
   // persistence
 
   load() {
-    var data = localStorage.getItem(KEY);
+    var data = localStorage ? localStorage.getItem(KEY) : null;
     if (!data) return DEFAULTS;
     return JSON.parse(data);
   }
 
   store() {
     this.emit('change');
-    localStorage.setItem(KEY, JSON.stringify(this.list));
+    if (localStorage) localStorage.setItem(KEY, JSON.stringify(this.list));
   }
 
   // read

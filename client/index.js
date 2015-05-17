@@ -6,4 +6,7 @@ import filter from './filter';
 var app = tree(<App />);
 app.use(filter());
 app.use(todos());
-render(app, document.querySelector('main'));
+
+var root = document.querySelector('main');
+root.innerHTML = '';
+render(app, root);
