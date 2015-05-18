@@ -4,7 +4,7 @@
     "babel": "^5.4.3",
     "bus": "^0.1.0",
     "clone": "^1.0.2",
-    "deku": "^0.2.17",
+    "deku": "^0.3.0",
     "express": "^4.12.3",
     "hashchange": "^1.0.0",
     "todomvc-app-css": "^2.0.0",

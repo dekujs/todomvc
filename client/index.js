@@ -7,6 +7,4 @@ var app = tree(<App />);
 app.use(filter());
 app.use(todos());
 
-var root = document.querySelector('main');
-root.innerHTML = '';
-render(app, root);
+render(app, document.querySelector('main'));
